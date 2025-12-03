@@ -23,8 +23,11 @@ namespace GameConsole.Pages
 			CenterText("Press any key to continue");
 			
 			Console.ReadKey();
-			
 
-		}
+			Screen next = new MainMenu();
+			next.Show();
+
+
+        }
 	}
 }

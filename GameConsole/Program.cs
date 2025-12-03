@@ -19,13 +19,14 @@ namespace GameConsole
             //Console.Write($" Game:{game.Name}");
             //Console.WriteLine($"Score:{game.Score}");
             //        }
-            Screen mainScreen = new Screen("Home Page");
-            mainScreen.Show();
-            Screen welcome = new WelcomeScreen();
-            welcome.Show();
+            //Screen mainScreen = new Screen("Home Page");
+            //mainScreen.Show();
+            //Screen welcome = new WelcomeScreen();
+            //welcome.Show();
 
+            ConsuleGame app = new ConsuleGame();
+            app.StartApp();
 
-
-		}
+        }
     }
 }

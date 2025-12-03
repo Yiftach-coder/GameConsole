@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameConsole.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -24,5 +25,15 @@ namespace GameConsole.Base
 			this.Screen = screen;
 		}
 
-	}
+        public MenuItem(string v, RegisterScreen registerScreen)
+        {
+            this.DisplayName = v;
+            this.Screen = registerScreen;
+        }
+		public MenuItem(string v, LoginScreen loginScreen)
+        {
+			this.DisplayName = v;
+			this.Screen = loginScreen;
+        }
+    }
 }

@@ -22,5 +22,38 @@ namespace GameConsole.Base
 		{
 			items.Add(new MenuItem(displayName, sc));
 		}
+        public override void Show()
+        {
+            base.Show();
+			CenterText("Choose Your Screen: ");
+			bool exit = false;
+			int choose;
+			while (!exit)
+			{
+				for (int i = 0; i < items.Count; i++)
+				{
+					CenterText($"{i + 1} - {items[i].DisplayName}");
+
+				}
+				CenterText($"{items.Count+1} - Exit");
+
+				CenterText($"choose between 1-{items.Count+1}: ");
+                int.TryParse(Console.ReadLine(), out choose);
+
+				if (choose > 0 && choose <= items.Count) exit = true;
+				Console.Clear();
+				if (choose < items.Count+1)
+				{
+                    items[choose-1].Screen.Show();
+					Console.ReadKey();
+                    Console.Clear();
+                    Show();
+                }
+				else
+				{
+					exit = true;
+                }
+            }
+        }
 	}
 }
