@@ -17,15 +17,17 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
-            
-
             CenterText("Please Enter Your UserName and Password: ");
-            Console.WriteLine("UserName: ");
+
+            Console.Write("\nUserName: ");
             string userNameIsExists = Console.ReadLine();
-            Console.WriteLine("Password: ");
+
+            Console.Write("\nPassword: ");
             string passwordIsExists = Console.ReadLine();
+
             bool isFound = false;
             List<Users> RegisteredUsers = UserList.getInstance(); 
+
             foreach (Users user in RegisteredUsers)
             {
                 if (userNameIsExists == user.username && passwordIsExists == user.password)
@@ -33,6 +35,7 @@ namespace GameConsole.Pages
                     CenterText("Login Successful! Press any key to continue...");
                     CenterUserName(userNameIsExists);
                     Console.ReadKey();
+
                     isFound = true;
                 }
             }

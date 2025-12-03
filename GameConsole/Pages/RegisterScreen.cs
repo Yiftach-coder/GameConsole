@@ -22,13 +22,13 @@ namespace GameConsole.Pages
             string name, userName, password;
             List<Users> usersList = UserList.getInstance();
 
-            Console.WriteLine("Name: ");
+            Console.Write("\nName: ");
             name = Console.ReadLine();
 
-            Console.WriteLine("UserName: ");
+            Console.Write("\nUserName: ");
             userName = Console.ReadLine();
 
-            Console.WriteLine("Password: ");
+            Console.Write("\nPassword: ");
             password = Console.ReadLine();
 
             while (true)
@@ -50,7 +50,7 @@ namespace GameConsole.Pages
 
                 if (!isExists) break;
 
-                Console.WriteLine("UserName: ");
+                Console.Write("\nUserName: ");
                 userName = Console.ReadLine();
 
             }

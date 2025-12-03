@@ -15,8 +15,6 @@ namespace GameConsole.Pages
 		public override void Show()
 		{
 			base.Show();
-
-			//Console.SetCursorPosition((Console.WindowLeft + Console.WindowWidth / 2)-Console.CursorLeft, Console.WindowTop + Console.WindowHeight / 2);
 			string text = "Welcome to the Game Console Application!";
 			CenterText(text);
 			
