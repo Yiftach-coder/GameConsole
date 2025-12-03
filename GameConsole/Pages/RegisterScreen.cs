@@ -18,43 +18,52 @@ namespace GameConsole.Pages
         {
             base.Show();
             CenterText("Please enter your details to register:");
-            string name = " ", userName = " ", password = " ";
-            bool isExists = false;
+
+            string name, userName, password;
             List<Users> usersList = UserList.getInstance();
-            Users user = new Users(name, userName, password);
+
+            Console.WriteLine("Name: ");
+            name = Console.ReadLine();
+
+            Console.WriteLine("UserName: ");
+            userName = Console.ReadLine();
+
+            Console.WriteLine("Password: ");
+            password = Console.ReadLine();
+
             while (true)
             {
-                Console.WriteLine("Name: ");
-                name = Console.ReadLine();
-                Console.WriteLine("UserName: ");
-                userName = Console.ReadLine();
-                Console.WriteLine("Password: ");
-                password = Console.ReadLine();
-                isExists = true;
-                foreach (Users user1 in UserList.getInstance())
+
+                bool isExists = false;
+
+                foreach (Users user1 in usersList)
                 {
-                    
+
                     if (userName == user1.username)
                     {
                         CenterText("UserName already exists. Please choose a different UserName.");
-                        Console.ReadKey();
-                        isExists = false;
+                        isExists = true;
                         break;
                     }
 
                 }
-                if (isExists)
-                {
-                    break;
-                }
+
+                if (!isExists) break;
+
+                Console.WriteLine("UserName: ");
+                userName = Console.ReadLine();
+
             }
-            
+
             CenterText("Register Successful! Press any key to continue...");
+
+            Users user = new Users(name, userName, password);
             usersList.Add(user);
+
+
             CenterUserName(user.username);
             Console.ReadKey();
-            user = new Users(name, userName, password);
-
+            
             Screen next = new MainMenu();
             next.Show();
 
