@@ -22,8 +22,7 @@ namespace GameConsole.Pages
             CenterText("Please enter your details to register:");
 
             string name, userName, password;
-            List<Users> usersList = UserList.getInstance();
-
+            
             Console.Write("\nName: ");
             name = Console.ReadLine();
 
@@ -33,34 +32,26 @@ namespace GameConsole.Pages
             Console.Write("\nPassword: ");
             password = Console.ReadLine();
 
-            while (true)
+            Users user = new Users(name, userName, password);
+
+            if (!UserList.Add(user)) 
             {
-
-                bool isExists = false;
-
-                foreach (Users user1 in usersList)
+                while (true)
                 {
-
-                    if (userName == user1.username)
+                    CenterText("Username already exists. Please enter a different username.");
+                    Console.Write("\nUserName: ");
+                    userName = Console.ReadLine();
+                    user.username = userName;
+                    if (UserList.Add(user))
                     {
-                        CenterText("UserName already exists. Please choose a different UserName.");
-                        isExists = true;
+                        
                         break;
                     }
-
                 }
-
-                if (!isExists) break;
-
-                Console.Write("\nUserName: ");
-                userName = Console.ReadLine();
-
             }
 
             CenterText("Register Successful! Press any key to continue...");
-
-            Users user = new Users(name, userName, password);
-            usersList.Add(user);
+            UserList.Add(user);
 
 
             CenterUserName(user.username);
@@ -70,6 +61,5 @@ namespace GameConsole.Pages
             next.Show();
 
         }
-
     }    
 }

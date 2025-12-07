@@ -27,30 +27,21 @@ namespace GameConsole.Pages
             Console.Write("\nPassword: ");
             string passwordIsExists = Console.ReadLine();
 
-            bool isFound = false;
-            List<Users> RegisteredUsers = UserList.getInstance(); 
-
-            foreach (Users user in RegisteredUsers)
+           
+            if (UserList.Login(userNameIsExists, passwordIsExists))
             {
-                if (userNameIsExists == user.username && passwordIsExists == user.password)
-                {
-                    CenterText("Login Successful! Press any key to continue...");
-                    CenterUserName(userNameIsExists);
-                    Console.ReadKey();
-
-                    isFound = true;
-                }
+                CenterText("Logged in Successful! Press any key to continue...");
+                Screen next = new MenuGames();
+                next.Show();
             }
-            if (!isFound)
+            else
             {
-                CenterText("User doesn't exists. You need to Register before you login.");
-                CenterText("Press any key to go back to Main Menu...");
+                CenterText("Invalid UserName or Password. Please try again.");
                 Console.ReadKey();
                 Screen back = new MainMenu();
                 back.Show();
             }
-            Screen next = new MenuGames();
-            next.Show();
+            
         }
     }
 }

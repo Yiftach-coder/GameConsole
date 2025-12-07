@@ -11,21 +11,26 @@ namespace GameConsole.Data
     internal class UserList
     {
         private static List<Users> users = new List<Users>();
-        public void Add(Users user)
+        public static bool Add(Users user)
         {
+           
+            foreach (Users u in users)
+            {
+                if (u.username == user.username)
+                {
+                    
+                    return false;
+                }
+            }
+            
             users.Add(user);
+            return true;
         }
-        public static List<Users> getInstance()
+        
+        
+        public static bool Login(string Username, string password)
         {
-            return users;
-        }
-        public static void RegisterUser(string name, string username, string password)
-        {
-            users.Add(new Users(name, username, password));
-        }
-        public static Users Login(string Username, string password)
-        {
-            return users.Find(user => user.username == Username && user.password == password);
+            return users.Any(user => user.username == Username && user.password == password);
         }
         
         private UserList()
