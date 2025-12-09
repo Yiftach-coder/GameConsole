@@ -13,21 +13,27 @@ namespace GameConsole.Data
         private static List<Users> users = new List<Users>();
         public static bool Add(Users user)
         {
-           
-            foreach (Users u in users)
-            {
-                if (u.username == user.username)
-                {
-                    
-                    return false;
-                }
-            }
-            
-            users.Add(user);
-            return true;
+            bool exists = users.Any(u => user.username == u.username);
+            if(!exists) users.Add(user);
+            return !exists;
         }
-        
-        
+
+        public static bool UpdateUsername(string currentUsername, string newUsername)
+        {
+            if (users.Any(u => u.username == newUsername))
+            {
+                return false;
+            }
+            var user = users.FirstOrDefault(u => u.username == currentUsername);
+            if (user != null)
+            {
+                user.username = newUsername;
+                return true; 
+            }
+            return false; 
+        }
+
+
         public static bool Login(string Username, string password)
         {
             return users.Any(user => user.username == Username && user.password == password);

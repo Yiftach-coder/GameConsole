@@ -31,8 +31,10 @@ namespace GameConsole.Pages
             if (UserList.Login(userNameIsExists, passwordIsExists))
             {
                 CenterText("Logged in Successful! Press any key to continue...");
-                Screen next = new MenuGames();
-                next.Show();
+                Console.ReadKey();
+                Screen menu = new SecondMenu();
+                menu.Show();
+
             }
             else
             {
