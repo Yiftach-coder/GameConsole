@@ -10,6 +10,7 @@ namespace GameConsole.Data
 {
     internal class UserList
     {
+        
         private static List<Users> users = new List<Users>();
         public static bool Add(Users user)
         {
@@ -24,13 +25,27 @@ namespace GameConsole.Data
             {
                 return false;
             }
-            var user = users.FirstOrDefault(u => u.username == currentUsername);
+            Users user = users.FirstOrDefault(u => u.username == currentUsername);
             if (user != null)
             {
                 user.username = newUsername;
                 return true; 
             }
             return false; 
+        }
+        public static bool UpdatePassword(string CurrentUsername, string currentPassword, string newPassword)
+        {
+            
+            foreach(var user in users)
+            {
+                if (user.username == CurrentUsername)
+                {
+                    user.password = newPassword;
+                    return true;
+                }
+            }
+            
+            return false;
         }
 
 

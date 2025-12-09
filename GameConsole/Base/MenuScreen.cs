@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameConsole.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace GameConsole.Base
 {
 	internal class MenuScreen : Screen
 	{
+		
 		private List<MenuItem> items;
 		public MenuScreen(string title) : base(title)
 		{

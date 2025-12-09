@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameConsole
+namespace GameConsole.Pages
 {
-    internal class PasswordUpdate:Screen
+    internal class Profile:Screen
     {
-        public PasswordUpdate() : base("Update Password")
+        public Profile() : base("Profile")
         {
         }
     }

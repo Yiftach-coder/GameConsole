@@ -10,6 +10,7 @@ namespace GameConsole.Base
 {
 	public class Screen
 	{
+
 		public string Title
 		{
 			get; set;
@@ -21,6 +22,7 @@ namespace GameConsole.Base
 		}
 		public virtual void Show()
 		{
+			
 			Console.Clear();
 
 			CenterText(Title);
@@ -32,9 +34,7 @@ namespace GameConsole.Base
 			Console.SetCursorPosition((Console.WindowTop + Console.WindowWidth / 2)-text.Length/2, Console.CursorTop);
 			Console.WriteLine(text);
 		}
-		public void CenterUserName(string userName)
-		{
-            Console.SetCursorPosition((Console.WindowTop + Console.WindowWidth - Console.WindowHeight) - userName.Length / 2, Console.CursorTop);
-        }
+		
+
 	}
 }

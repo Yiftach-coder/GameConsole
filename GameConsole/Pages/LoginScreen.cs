@@ -32,7 +32,8 @@ namespace GameConsole.Pages
             {
                 CenterText("Logged in Successful! Press any key to continue...");
                 Console.ReadKey();
-                Screen menu = new SecondMenu();
+                Users user = new Users("", userNameIsExists, passwordIsExists);
+                Screen menu = new SecondMenu(user);
                 menu.Show();
 
             }

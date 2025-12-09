@@ -54,7 +54,7 @@ namespace GameConsole.Pages
             UserList.Add(user);
 
 
-            CenterUserName(user.username);
+            
             Console.ReadKey();
             
             Screen next = new MainMenu();
