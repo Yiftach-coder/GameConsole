@@ -27,7 +27,8 @@ namespace GameConsole.Pages
                 CenterText($"Your new Password is: {NewPassword}");
                 Console.ReadKey();
             }
-            
+            Screen back = new MainMenu();
+            back.Show();
         }
     }
 }

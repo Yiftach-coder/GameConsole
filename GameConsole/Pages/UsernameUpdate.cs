@@ -34,6 +34,8 @@ namespace GameConsole.Pages
                 CenterText("Username already exists. Please try a different username. Press any key to go back...");
                 
             }
+            Screen back = new MainMenu();
+            back.Show();
         }
     }
 }

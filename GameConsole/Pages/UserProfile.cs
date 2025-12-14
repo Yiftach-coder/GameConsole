@@ -14,7 +14,7 @@ namespace GameConsole.Pages
         public UserProfile(Users user) : base("User Profile")
         {
             CenterText("Welcome to Your Profile!");
-            Add(new MenuItem("View Profile Details", new Profile()));
+            Add(new MenuItem("View Profile Details", new Profile(user)));
             Add(new MenuItem("Change Password", new PasswordUpdate(user)));
             Add(new MenuItem("Change Username", new UsernameUpdate(user)));
             

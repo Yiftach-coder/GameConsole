@@ -22,17 +22,17 @@ namespace GameConsole.Pages
             CenterText("Please Enter Your UserName and Password: ");
 
             Console.Write("\nUserName: ");
-            string userNameIsExists = Console.ReadLine();
+            string LoginUsername = Console.ReadLine();
 
             Console.Write("\nPassword: ");
-            string passwordIsExists = Console.ReadLine();
+            string LoginPassword = Console.ReadLine();
 
            
-            if (UserList.Login(userNameIsExists, passwordIsExists))
+            if (UserList.Login(LoginUsername, LoginPassword))
             {
                 CenterText("Logged in Successful! Press any key to continue...");
                 Console.ReadKey();
-                Users user = new Users("", userNameIsExists, passwordIsExists);
+                Users user = new Users("", LoginUsername, LoginPassword);
                 Screen menu = new SecondMenu(user);
                 menu.Show();
 
