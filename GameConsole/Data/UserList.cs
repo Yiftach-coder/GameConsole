@@ -18,7 +18,17 @@ namespace GameConsole.Data
             if(!exists) users.Add(user);
             return !exists;
         }
-
+        public static string getName(string username, string password)
+        {
+            foreach(var user in users)
+            {
+                if (user.username == username && user.password == password)
+                {
+                    return user.name;
+                }
+            }
+            return null;
+        }
         public static bool UpdateUsername(string currentUsername, string newUsername)
         {
             if (users.Any(u => u.username == newUsername))

@@ -1,4 +1,5 @@
 ﻿using GameConsole.Base;
+using GameConsole.Games;
 using GameConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace GameConsole.Pages
 {
-    internal class Profile:Screen
+    internal class GameHistory:Screen
     {
         private Users user;
-        public Profile(Users user) : base("Profile")
+        public GameHistory(Users user) : base("Profile")
         {
             this.user = user;
         }
@@ -19,11 +20,8 @@ namespace GameConsole.Pages
         {
             base.Show();
             Console.ForegroundColor = ConsoleColor.Green;
-            CenterText("Here are your profile details");
-            CenterText("Name: " + user.name);
-            CenterText("Your Username: " + user.username);
-            CenterText("Your password: " + user.password);
-            CenterText("Press any key to go back...");
+            CenterText($"{user.username}'s Game History:");
+            
             Console.ReadKey();
         }
     }

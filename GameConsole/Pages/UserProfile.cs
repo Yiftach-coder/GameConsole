@@ -13,11 +13,13 @@ namespace GameConsole.Pages
         private Users user;
         public UserProfile(Users user) : base("User Profile")
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             CenterText("Welcome to Your Profile!");
             Add(new MenuItem("View Profile Details", new Profile(user)));
             Add(new MenuItem("Change Password", new PasswordUpdate(user)));
             Add(new MenuItem("Change Username", new UsernameUpdate(user)));
-            
+            Add(new MenuItem("Your Game History", new GameHistory(user)));
+            this.user = user;
         }
     }
 }

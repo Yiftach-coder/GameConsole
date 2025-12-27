@@ -15,7 +15,8 @@ namespace GameConsole.Pages
 		public override void Show()
 		{
 			base.Show();
-			string text = "Welcome to the Game Console Application!";
+            Console.ForegroundColor = ConsoleColor.Green;
+            string text = "Welcome to the Game Console Application!";
 			CenterText(text);
 			
 			CenterText("Press any key to continue");

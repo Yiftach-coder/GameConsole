@@ -20,6 +20,7 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
+            Console.ForegroundColor = ConsoleColor.Green;
             CenterText("Enter your new username: ");
             string NewuserName = Console.ReadLine();
             if (UserList.UpdateUsername(user.username, NewuserName))

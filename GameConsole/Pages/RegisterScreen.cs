@@ -19,6 +19,7 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
+            Console.ForegroundColor = ConsoleColor.Green;
             CenterText("Please enter your details to register:");
 
             string name, userName, password;

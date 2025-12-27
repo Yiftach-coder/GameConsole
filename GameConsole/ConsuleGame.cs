@@ -1,4 +1,5 @@
 ﻿using GameConsole.Base;
+using GameConsole.Models;
 using GameConsole.Pages;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace GameConsole
 {
     internal class ConsuleGame
     {
+        
         private Screen MainPage;
 
         public ConsuleGame()

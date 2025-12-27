@@ -24,8 +24,8 @@ namespace GameConsole.Base
 		{
 			
 			Console.Clear();
-
-			CenterText(Title);
+            Console.ForegroundColor = ConsoleColor.Green;
+            CenterText(Title);
 		    	
 		}
 

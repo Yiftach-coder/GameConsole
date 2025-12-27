@@ -13,8 +13,9 @@ namespace GameConsole.Pages
         private Users user;
         public SecondMenu(Users user) : base("Menu")
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Add(new MenuItem("Go to The User Proflie", new UserProfile(user)));
-            Add(new MenuItem("Go to Games Menu", new MenuGames()));
+            Add(new MenuItem("Go to Games Menu", new MenuGames(user)));
             this.user = user;
             
 

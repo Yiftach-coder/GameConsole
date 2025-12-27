@@ -19,6 +19,7 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
+            Console.ForegroundColor = ConsoleColor.Green;
             CenterText("Enter your new password: ");
             string NewPassword = Console.ReadLine();
             if (UserList.UpdatePassword(user.username, user.password, NewPassword))

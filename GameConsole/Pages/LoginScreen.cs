@@ -19,6 +19,7 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
+            Console.ForegroundColor = ConsoleColor.Green;
             CenterText("Please Enter Your UserName and Password: ");
 
             Console.Write("\nUserName: ");
@@ -32,7 +33,7 @@ namespace GameConsole.Pages
             {
                 CenterText("Logged in Successful! Press any key to continue...");
                 Console.ReadKey();
-                Users user = new Users("", LoginUsername, LoginPassword);
+                Users user = new Users(UserList.getName(LoginUsername, LoginPassword), LoginUsername, LoginPassword);
                 Screen menu = new SecondMenu(user);
                 menu.Show();
 
