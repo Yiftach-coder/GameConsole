@@ -1,4 +1,5 @@
-﻿using GameConsole.Interfaces;
+﻿using GameConsole.Data;
+using GameConsole.Interfaces;
 using GameConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -141,7 +142,7 @@ namespace GameConsole.Games
             bool closeRequested = false;
             HighScore hs = new HighScore("Tetris", Score);
             user.HighscoreReplacer(hs);
-
+            GameHistory.Addhistory("Tetris", Score);
             while (!closeRequested && gameOverScreen)
             {
                 Console.CursorVisible = false;

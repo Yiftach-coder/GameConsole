@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using GameConsole.Data;
 using GameConsole.Interfaces;
 using GameConsole.Models;
 
@@ -105,6 +106,7 @@ public class FluffyBirdGame : IGamePlay
                     Score = Frame;
                     HighScore hs = new HighScore("Fluffy Bird", Frame);
                     user.HighscoreReplacer(hs);
+                    GameHistory.Addhistory("Fluffy Bird", Frame);
                 GetPlayAgainInput:
                     ConsoleKey key = Console.ReadKey(true).Key;
                     if (key is ConsoleKey.Enter)

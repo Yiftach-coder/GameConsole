@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using GameConsole.Data;
 using GameConsole.Interfaces;
 using GameConsole.Models;
 using Towel;
@@ -254,6 +255,7 @@ public class PacManGame : IGamePlay
                             Console.WriteLine("Play Again [enter], or quit [escape]?");
                             HighScore hs = new HighScore("PacMan", Score);
                             user.HighscoreReplacer(hs);
+                            GameHistory.Addhistory("PacMan", Score);
                         GetInput:
                             switch (Console.ReadKey(true).Key)
                             {

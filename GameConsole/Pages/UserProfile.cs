@@ -1,4 +1,5 @@
 ﻿using GameConsole.Base;
+using GameConsole.Data;
 using GameConsole.Models;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace GameConsole.Pages
             Add(new MenuItem("View Profile Details", new Profile(user)));
             Add(new MenuItem("Change Password", new PasswordUpdate(user)));
             Add(new MenuItem("Change Username", new UsernameUpdate(user)));
-            Add(new MenuItem("Your Game History", new GameHistory(user)));
+            Add(new MenuItem("Your Game History", new MenuHistory()));
             this.user = user;
         }
     }
